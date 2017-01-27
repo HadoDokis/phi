@@ -80,20 +80,48 @@
       </p>
       <p>Pour sauvegarder votre nouvelle image de profil, maintenez votre doigt ou faites un clic droit sur celle-ci, puis ‟Enregistrer l'image sous…”</p>
 
+      <input type="image" src="img/button1.png" id="button" value = "button" style= "color:white" onclick="setColor('#00B6CD', '#C94E34','#FFFFFF','#FFFFFF')";/>
+      <input type="image" src="img/button2.png" id="button" value = "button" style= "color:white" onclick="setColor('#00B6CD', '#FFFFFF','#C94E34','#FFFFFF')";/>
+      <input type="image" src="img/button3.png" id="button" value = "button" style= "color:white" onclick="setColor('#C94E34', '#FFFFFF','#00B6CD','#FFFFFF')";/>      
+
+
+      <input type="image" src="img/button4.png" id="button" value = "button" style= "color:white" onclick="setColor('#00B6CD', '#C94E34','#FFFFFF','#00B6CD')";/> 
+      <input type="image" src="img/button5.png" id="button" value = "button" style= "color:white" onclick="setColor('#00B6CD', '#FFFFFF','#C94E34','#00B6CD')";/>
+      <input type="image" src="img/button6.png" id="button" value = "button" style= "color:white" onclick="setColor('#C94E34', '#FFFFFF','#00B6CD','#00B6CD')";/>      
+
+
+      <input type="image" src="img/button7.png" id="button" value = "button" style= "color:white" onclick="setColor('#00B6CD', '#C94E34','#FFFFFF','#C94E34')";/>
+      <input type="image" src="img/button8.png" id="button" value = "button" style= "color:white" onclick="setColor('#00B6CD', '#FFFFFF','#C94E34','#C94E34')";/>
+      <input type="image" src="img/button9.png" id="button" value = "button" style= "color:white" onclick="setColor('#C94E34', '#FFFFFF','#00B6CD','#C94E34')";/>      
+
+
+<hr>             
+      <!--<input type="image" src="img/beer.png" />-->
       <canvas class="phi">
         Votre navigateur est obsolète.
       </canvas>
 
       <form>
         <label>
-          Couleur du symbole φ (phi)&nbsp;: 
-          <input type="color" name="phi" value="#C94E34" />
+          Couleur du symbole φ (phi)<!--(phi1)-->&nbsp;: 
+          <input type="color" name="phi" id="phi" value="#00B6CD" />
         </label>
         <label>
-          Couleur de l'image&nbsp;: 
-          <input type="color" name="background" value="#00B6CD" />
+          Couleur du Texte φ (L'AVENIR) <!--(phi2)-->&nbsp;: 
+          <input type="color" name="phi2" id="phi2" value="#C94E34" />
+        </label>
+        <label>
+         φ Couleur du bandeau <!--(phi3)-->&nbsp;: 
+          <input type="color" name="phi3" id="phi3" value="#FFFFFF" />
+        </label>
+        <label>
+          Couleur du fond&nbsp;: 
+          <input type="color" name="background" id="background" value="#C94E34" />
         </label>
       </form>
+
+<div><a class="_2vmz" href="/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2Fshare-button%2F&amp;display=popup&amp;ref=plugin&amp;src=like&amp;app_id=113869198637480" target="_blank" id="u_0_2"><button type="submit" class="inlineBlock _2tga _49ve" id="u_0_5"><div class="_2n-v"><span class="_49vh _2pi7">Partager</span></div></button></a></div>
+
     </main>
     
     <footer>
@@ -105,10 +133,19 @@
     <script src="phi.js"></script>
     
     <script>
+      function setColor(cphi1, cphi2, cphi3, background){
+
+        document.getElementById("phi").value =cphi1
+        document.getElementById("phi2").value =cphi2
+        document.getElementById("phi3").value =cphi3
+        document.getElementById("background").value =background
+  
+      }
       (function(){
         
-        const phi = new Phi(document.querySelector('main'))
-        phi.draw()
+        const phi2 = new Phi2(document.querySelector('main'))
+        phi2.draw()
+              
         
       })()
     </script>

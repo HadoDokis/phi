@@ -1,4 +1,4 @@
-class Phi {
+class Phi2 {
 	
 	constructor(container) {
 
@@ -6,19 +6,33 @@ class Phi {
     this.canvas = this.container.querySelector('canvas')
     this.ctx = this.canvas.getContext('2d')
 
-    this.phiBuffer = document.createElement('canvas')
-    this.phiBufferCtx = this.phiBuffer.getContext('2d')
+    this.phi1Buffer = document.createElement('canvas')
+    this.phi1BufferCtx = this.phi1Buffer.getContext('2d')
+    
+    this.phi2Buffer = document.createElement('canvas')
+    this.phi2BufferCtx = this.phi2Buffer.getContext('2d')
+    
+    this.phi3Buffer = document.createElement('canvas')
+    this.phi3BufferCtx = this.phi3Buffer.getContext('2d')  
     
     this.picBuffer = document.createElement('canvas')
     this.picBufferCtx = this.picBuffer.getContext('2d')
     
     // Image du phi
-    this.phi = new Image
-    this.phi.src = 'phi.svg'
+    this.phi1 = new Image
+    this.phi1.src = 'phi2-a.svg'
+
+    // Image du phi
+    this.phi2 = new Image
+    this.phi2.src = 'phi2-b.svg'
+    
+    // Image du phi
+    this.phi3 = new Image
+    this.phi3.src = 'phi2-c.svg'
     
     // Photo par défaut
     this.picture = new Image
-    this.picture.src = 'faites-glisser.svg'
+    this.picture.src = 'faites-glisser.png'
     this.picture.addEventListener('load', () => {
       this.updateCanvasSize()
     })
@@ -36,7 +50,9 @@ class Phi {
   }
 
   set width(width) {
-    this._width = this.canvas.width = this.phiBuffer.width = this.picBuffer.width = width
+    this._width = this.canvas.width = this.phi1Buffer.width = this.picBuffer.width = width
+    this._width = this.canvas.width = this.phi2Buffer.width = this.picBuffer.width = width
+    this._width = this.canvas.width = this.phi3Buffer.width = this.picBuffer.width = width
   }
 
   get height() {
@@ -44,11 +60,19 @@ class Phi {
   }
 
   set height(height) {
-    this._height = this.canvas.height = this.phiBuffer.height = this.picBuffer.height = height
+    this._height = this.canvas.height = this.phi1Buffer.height = this.picBuffer.height = height
+    this._height = this.canvas.height = this.phi2Buffer.height = this.picBuffer.height = height
+    this._height = this.canvas.height = this.phi3Buffer.height = this.picBuffer.height = height
   }
 
-  get phiColor () {
+  get phi1Color () {
     return this.container.querySelector('input[type="color"][name="phi"]').value
+  }
+  get phi2Color () {
+    return this.container.querySelector('input[type="color"][name="phi2"]').value
+  }
+  get phi3Color () {
+    return this.container.querySelector('input[type="color"][name="phi3"]').value
   }
   
   get backgroundColor () {
@@ -81,14 +105,43 @@ class Phi {
       sx = this.picture.width / 2 - sw / 2
     }
     
+
+    
+
+    
+    // Coloration du phi3
+    this.phi3BufferCtx.save()
+    this.phi3BufferCtx.clearRect(0, 0, this.width, this.height)
+    this.phi3BufferCtx.drawImage(this.phi3, 0, 0, this.width, this.height)
+    this.phi3BufferCtx.globalCompositeOperation = 'source-in'
+    this.phi3BufferCtx.fillStyle = this.phi3Color
+    this.phi3BufferCtx.fillRect(0, 0, this.width, this.height)
+    this.phi3BufferCtx.restore()
+
+    // Coloration du phi2
+    this.phi2BufferCtx.save()
+    this.phi2BufferCtx.clearRect(0, 0, this.width, this.height)
+    this.phi2BufferCtx.drawImage(this.phi2, 0, 0, this.width, this.height)
+    this.phi2BufferCtx.globalCompositeOperation = 'source-in'
+    this.phi2BufferCtx.fillStyle = this.phi2Color
+    this.phi2BufferCtx.fillRect(0, 0, this.width, this.height)
+    this.phi2BufferCtx.restore()
+    
     // Coloration du phi
-    this.phiBufferCtx.save()
-    this.phiBufferCtx.clearRect(0, 0, this.width, this.height)
-    this.phiBufferCtx.drawImage(this.phi, 0, 0, this.width, this.height)
-    this.phiBufferCtx.globalCompositeOperation = 'source-in'
-    this.phiBufferCtx.fillStyle = this.phiColor
-    this.phiBufferCtx.fillRect(0, 0, this.width, this.height)
-    this.phiBufferCtx.restore()
+    this.phi1BufferCtx.save()
+    this.phi1BufferCtx.clearRect(0, 0, this.width, this.height)
+    this.phi1BufferCtx.drawImage(this.phi1 , 0, 0, this.width, this.height)
+    this.phi1BufferCtx.globalCompositeOperation = 'source-in'
+    this.phi1BufferCtx.fillStyle = this.phi1Color
+    this.phi1BufferCtx.fillRect(0, 0, this.width, this.height)
+    this.phi1BufferCtx.restore()
+
+
+
+
+
+
+
 
     // Photo
     this.picBufferCtx.save()
@@ -113,7 +166,10 @@ class Phi {
     this.ctx.clearRect(0, 0, this.width, this.height)
     this.ctx.drawImage(this.picBuffer, 0, 0, this.width, this.height)
     this.ctx.globalAlpha = 0.9
-    this.ctx.drawImage(this.phiBuffer, 0, 0, this.width, this.height)
+    this.ctx.drawImage(this.phi3Buffer, 0, 0, this.width, this.height)    
+    this.ctx.drawImage(this.phi1Buffer, 0, 0, this.width, this.height)
+    this.ctx.drawImage(this.phi2Buffer, 0, 0, this.width, this.height)
+
     this.ctx.restore()
     
     requestAnimationFrame(this.draw.bind(this))
