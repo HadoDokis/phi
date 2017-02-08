@@ -1,252 +1,241 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+
+<head>
     <meta charset="UTF-8">
 
-    <!-- Font -->                
-    <link rel="stylesheet" href="/assets/webshims/shims/styles/shim.css">         
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">              
-    <!-- Bootstrap -->                
-    <link href="https://jlm2017.github.io/theme/dist/theme.css" rel="stylesheet">              
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/css/selectize.bootstrap3.min.css" integrity="sha256-xaHB15TZbLhew82A2NzY8rvCCp/REcOA/kSpWWO7TlE=" crossorigin="anonymous">  
- 
+    <!-- Font -->
+    <link rel="stylesheet" href="/assets/webshims/shims/styles/shim.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <link href="https://jlm2017.github.io/theme/dist/theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/css/selectize.bootstrap3.min.css" integrity="sha256-xaHB15TZbLhew82A2NzY8rvCCp/REcOA/kSpWWO7TlE=" crossorigin="anonymous">
 
-   
-	<meta property="og:url"                content="http://etienne.gauvin.info/phi/index.html" />
-	<meta property="og:type"               content="website" />
-	<meta property="og:title"              content="φ – Photo de profil insoumise" />
-	<meta property="og:description"        content="Ajoutez un phi φ facilement à votre photo de profil" />
-	<meta property="og:image"              content="http://etienne.gauvin.info/phi/miniature-partage" />
-	
+    <meta property="og:url" content="https://hadodokis.github.io/phi/index.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="φ – Photo de profil insoumise" />
+    <meta property="og:description" content="Ajoutez un phi φ facilement à votre photo de profil" />
+    <meta property="og:image" content="https://hadodokis.github.io/phi/miniature-partage.png" />
+
     <title>φ – Photo de profil insoumise</title>
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
     <style>
-.headline {
-    color: #0098b6;
-    font-family: Roboto Slab, Sans-serif;
-}    
-    
-      body {
-        text-align: center;
-        background-color: white;
-        font-size: large;
-        font-family: Roboto Slab, Sans-serif;
-      }
-
-      main {
-        margin: auto;
-       /* max-width: 60rem; */
-      }
-      
-      canvas {
-        width: 100%;
-      }
-      
-      form, form input {
-        text-align: right;
-        font-size: medium;
-        line-height: 1.5em;
-      }
-
-      label {
-        display: block;
-      }
-      
-      form label, form input {
-      	background-color: transparent;
-        border: 0;
-        border-radius: 2px;
-      }
-      
-      form label:hover,
-      form label:focus {
-      	background-color: rgba(0, 0, 0, 0.1);
-      }
-      
-footer {
-    border-top: 0px; 
-    background-color: #ffffff; 
-    margin-bottom: 0; 
-}
-
-card {
-        margin: auto;
-        /*max-width: 138rem;*/
-}
-
-/*       
+        .headline {
+            color: #0098b6;
+            font-family: Roboto Slab, Sans-serif;
+        }
+        
+        body {
+            text-align: center;
+            background-color: white;
+            font-size: large;
+            font-family: Roboto Slab, Sans-serif;
+        }
+        
+        main {
+            margin: auto;
+            /* max-width: 60rem; */
+        }
+        
+        canvas {
+            width: 100%;
+        }
+        
+        form,
+        form input {
+            text-align: right;
+            font-size: medium;
+            line-height: 1.5em;
+        }
+        
+        label {
+            display: block;
+        }
+        
+        form label,
+        form input {
+            background-color: transparent;
+            border: 0;
+            border-radius: 2px;
+        }
+        
+        form label:hover,
+        form label:focus {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            border-top: 0px;
+            background-color: #ffffff;
+            margin-bottom: 0;
+        }
+        
+        card {
+            margin: auto;
+            /*max-width: 138rem;*/
+        }
+        /*       
       footer {
       	font-size: small;
       	color: rgba(0, 0, 0, 0.33);
       }
-      
+
      footer a {
       	color: inherit;
       	text-decoration: none;
       }
-      
+
       footer a:hover,
       footer a:focus,
       footer a:active {
       	color: black;
       	text-decoration: underline;
       } */
-      
-      
     </style>
-  </head>
-  <body>
-  
-      <h2 class="headline">Photo de profil insoumise</h1>
-      <div class="intro">
-        Ajoutez facilement le symbole de la France insoumise sur votre photo de profil&nbsp;!
-        Pour cela, faites la glisser sur la photo ci-dessous.
-      <br><br>
-      Pour sauvegarder votre nouvelle image de profil, maintenez votre doigt ou faites un clic droit sur celle-ci, puis ‟Enregistrer l'image sous…”</p>
-       </div>
+</head>
 
+<body>
 
-<div class="container text-center">
-
-  
-    <div class="row hidden-print">
-    <div class="col-sm-2" ></div>  
-    <div class="col-sm-8 card" >
-
-      <br>
-
-          <div class="col-sm-8 text-left"> &nbsp;&nbsp;
-              <input type="image" src="img/button1.png" id="button" value = "button" style= "color:white" onclick="setColor('#00B6CD', '#C94E34','#FFFFFF','#FFFFFF')";/>
-              <input type="image" src="img/button2.png" id="button" value = "button" style= "color:white" onclick="setColor('#00B6CD', '#FFFFFF','#C94E34','#FFFFFF')";/>
-              <input type="image" src="img/button3.png" id="button" value = "button" style= "color:white" onclick="setColor('#C94E34', '#FFFFFF','#00B6CD','#FFFFFF')";/>      
-      
-        
-              <input type="image" src="img/button4.png" id="button" value = "button" style= "color:white" onclick="setColor('#00B6CD', '#C94E34','#FFFFFF','#00B6CD')";/> 
-              <input type="image" src="img/button5.png" id="button" value = "button" style= "color:white" onclick="setColor('#00B6CD', '#FFFFFF','#C94E34','#00B6CD')";/>
-              <input type="image" src="img/button6.png" id="button" value = "button" style= "color:white" onclick="setColor('#C94E34', '#FFFFFF','#00B6CD','#00B6CD')";/>      
-        
-        
-              <input type="image" src="img/button7.png" id="button" value = "button" style= "color:white" onclick="setColor('#00B6CD', '#C94E34','#FFFFFF','#C94E34')";/>
-              <input type="image" src="img/button8.png" id="button" value = "button" style= "color:white" onclick="setColor('#00B6CD', '#FFFFFF','#C94E34','#C94E34')";/>
-              <input type="image" src="img/button9.png" id="button" value = "button" style= "color:white" onclick="setColor('#C94E34', '#FFFFFF','#00B6CD','#C94E34')";/>      
-     </div>
-
-         <div class="col-sm-4 text-left">
-         </div>
-
-
-            
-         <div class="col-sm-12">
-        
-        
-            <main >           
-              <!--<input type="image" src="img/beer.png" />-->
-              
-              <div class="col-sm-7">
-                <canvas class="phi" >
-                  Votre navigateur est obsolète.
-                </canvas>
-              </div>
-        
-              <div class="col-sm-5"  >
-              <form>
-                <label>
-                  Couleur du symbole phi (φ)<!--(phi1)-->&nbsp;:<br> 
-                  <input type="color" name="phi" id="phi" value="#00B6CD" />
-                </label>
-                <label>
-                  Couleur du Texte "Avenir"<!--(phi2)-->&nbsp;:<br> 
-                  <input type="color" name="phi2" id="phi2" value="#C94E34" />
-                </label>
-                <label>
-                 Couleur du bandeau bas/droite<!--(phi3)-->&nbsp;:<br> 
-                  <input type="color" name="phi3" id="phi3" value="#FFFFFF" />
-                </label>
-                <label>
-                  Couleur du fond de la photo&nbsp;:<br> 
-                  <input type="color" name="background" id="background" value="#C94E34" />
-                </label>
-              </form>
-
-              </div>
-
-         
-            </main>
-
-            
-    
-    
-          </div>
-          
-        <div class="col-sm-12  text-cente"><p>Votre photo n'est ni sauvegardée, ni transmise sur le serveur.</p></div>
-          
-          
-        </div>
-
-       
-    <div class="col-sm-2" ></div>   
-       
+    <h2 class="headline">Photo de profil insoumise</h2>
+    <div class="intro">
+        Ajoutez facilement le symbole de la France insoumise sur votre photo de profil&nbsp;! Pour cela, faites la glisser sur la photo ci-dessous.
+        <p>
+            Pour sauvegarder votre nouvelle image de profil, maintenez votre doigt ou faites un clic droit sur celle-ci, puis ‟Enregistrer l'image sous…”</p>
     </div>
-    
 
+    <div class="container text-center">
 
-<br>    
-<div class="container">
-  <section>
-    <div class="row hidden-print">
+        <div class="row hidden-print">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8 card">
 
-        <div class="col-sm-4">
-          <a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fetienne.gauvin.info%2Fphi%2Findex.html" target="_blank" class="btn btn-primary btn-lg btn-block bottom-margin"><i class="fa fa-facebook"></i>&nbsp;&nbsp; Partager</a>
+                <br>
+
+                <div class="col-sm-8 text-left"> &nbsp;&nbsp;
+                    <input type="image" src="img/button1.png" id="button" value="button" style="color:white" onclick="setColor('#00B6CD', '#C94E34','#FFFFFF','#FFFFFF')" ;/>
+                    <input type="image" src="img/button2.png" id="button" value="button" style="color:white" onclick="setColor('#00B6CD', '#FFFFFF','#C94E34','#FFFFFF')" ;/>
+                    <input type="image" src="img/button3.png" id="button" value="button" style="color:white" onclick="setColor('#C94E34', '#FFFFFF','#00B6CD','#FFFFFF')" ;/>
+
+                    <input type="image" src="img/button4.png" id="button" value="button" style="color:white" onclick="setColor('#00B6CD', '#C94E34','#FFFFFF','#00B6CD')" ;/>
+                    <input type="image" src="img/button5.png" id="button" value="button" style="color:white" onclick="setColor('#00B6CD', '#FFFFFF','#C94E34','#00B6CD')" ;/>
+                    <input type="image" src="img/button6.png" id="button" value="button" style="color:white" onclick="setColor('#C94E34', '#FFFFFF','#00B6CD','#00B6CD')" ;/>
+
+                    <input type="image" src="img/button7.png" id="button" value="button" style="color:white" onclick="setColor('#00B6CD', '#C94E34','#FFFFFF','#C94E34')" ;/>
+                    <input type="image" src="img/button8.png" id="button" value="button" style="color:white" onclick="setColor('#00B6CD', '#FFFFFF','#C94E34','#C94E34')" ;/>
+                    <input type="image" src="img/button9.png" id="button" value="button" style="color:white" onclick="setColor('#C94E34', '#FFFFFF','#00B6CD','#C94E34')" ;/>
+                </div>
+
+                <div class="col-sm-4 text-left">
+                </div>
+
+                <div class="col-sm-12">
+
+                    <main>
+                        <!--<input type="image" src="img/beer.png" />-->
+
+                        <div class="col-sm-7">
+                            <canvas class="phi">
+                                Votre navigateur est obsolète.
+                            </canvas>
+                        </div>
+
+                        <div class="col-sm-5">
+                            <form>
+                                <label>
+                                    Couleur du symbole phi (φ)
+                                    <!--(phi1)-->&nbsp;:
+                                    <br>
+                                    <input type="color" name="phi" id="phi" value="#00B6CD" />
+                                </label>
+                                <label>
+                                    Couleur du Texte "Avenir"
+                                    <!--(phi2)-->&nbsp;:
+                                    <br>
+                                    <input type="color" name="phi2" id="phi2" value="#C94E34" />
+                                </label>
+                                <label>
+                                    Couleur du bandeau bas/droite
+                                    <!--(phi3)-->&nbsp;:
+                                    <br>
+                                    <input type="color" name="phi3" id="phi3" value="#FFFFFF" />
+                                </label>
+                                <label>
+                                    Couleur du fond de la photo&nbsp;:
+                                    <br>
+                                    <input type="color" name="background" id="background" value="#C94E34" />
+                                </label>
+                            </form>
+
+                        </div>
+
+                    </main>
+
+                </div>
+
+                <div class="col-sm-12  text-cente">
+                    <p>Votre photo n'est ni sauvegardée, ni transmise sur le serveur.</p>
+                </div>
+
+            </div>
+
+            <div class="col-sm-2"></div>
+
         </div>
-        <div class="col-sm-4">
-          <a href="https://twitter.com/share?url=http%3A%2F%2Fetienne.gauvin.info%2Fphi%2Findex.html" target="_blank" class="btn btn-primary btn-lg btn-block bottom-margin"><i class="fa fa-twitter"></i>&nbsp;&nbsp; Partager</a>
+
+        <br>
+        <div class="container">
+            <section>
+                <div class="row hidden-print">
+
+                    <div class="col-sm-4">
+                        <a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fhadodokis.github.io%2Fphi%2Findex.html" target="_blank" class="btn btn-primary btn-lg btn-block bottom-margin"><i class="fa fa-facebook"></i>&nbsp;&nbsp; Partager</a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="https://twitter.com/share?url=https%3A%2F%2Fhadodokis.github.io%2Fphi%2Findex.html" target="_blank" class="btn btn-primary btn-lg btn-block bottom-margin"><i class="fa fa-twitter"></i>&nbsp;&nbsp; Partager</a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="https://plus.google.com/share?url=https%3A%2F%2Fhadodokis.github.io%2Fphi%2Findex.html" target="_blank" class="btn btn-primary btn-lg btn-block bottom-margin"><i class="fa fa-google-plus"></i>&nbsp;&nbsp; Partager</a>
+                    </div>
+
+                </div>
+            </section>
         </div>
-        <div class="col-sm-4">
-          <a href="https://plus.google.com/share?url=http%3A%2F%2Fetienne.gauvin.info%2Fphi%2Findex.html" target="_blank" class="btn btn-primary btn-lg btn-block bottom-margin"><i class="fa fa-google-plus"></i>&nbsp;&nbsp; Partager</a>
-        </div>
 
-    </div>
-   </section> 
-</div>
+        <footer>
 
-    
-    <footer >
-    
-<div class="row bottom-margin">
-          <div class="col-sm-12">
-          
-          <p><a href="https://twitter.com/etngv"><i class="fa fa-twitter-square" ></i> etngv</a>&nbsp; -  &nbsp;
-          <a href="http://github.com/etienne-gauvin/phi"><i class="fa fa-github-square"></i> code-source</a>&nbsp; -  &nbsp; 
-          <a href="https://dons.jlm2017.fr/"> <i class="fa fa-gift"></i> Dons JLM2017</a> 
-          </p>
-          
-          </div>
-</div>    
-    
-    
+            <div class="row bottom-margin">
+                <div class="col-sm-12">
 
-    </footer>
-    
-    <script src="phi.js"></script>
-    
-    <script>
-      function setColor(cphi1, cphi2, cphi3, background){
+                    <p>
+                        <a href="https://github.com/HadoDokis/phi"><i class="fa fa-github-square"></i> code-source</a>&nbsp; - &nbsp;
+                        <a href="https://dons.jlm2017.fr/"> <i class="fa fa-gift"></i> Dons JLM2017</a>
+                    </p>
 
-        document.getElementById("phi").value =cphi1
-        document.getElementById("phi2").value =cphi2
-        document.getElementById("phi3").value =cphi3
-        document.getElementById("background").value =background
-  
-      }
-      (function(){
-        
-        const phi2 = new Phi2(document.querySelector('main'))
-        phi2.draw()
-              
-        
-      })()
-    </script>
-  </body>
+                </div>
+            </div>
+
+        </footer>
+
+        <script src="phi.js"></script>
+  </div>
+        <script>
+            function setColor(cphi1, cphi2, cphi3, background) {
+
+                document.getElementById("phi").value = cphi1
+                document.getElementById("phi2").value = cphi2
+                document.getElementById("phi3").value = cphi3
+                document.getElementById("background").value = background
+
+            }
+            (function() {
+
+                const phi2 = new Phi2(document.querySelector('main'))
+                phi2.draw()
+
+            })()
+        </script>
+
+</body>
 </html>
